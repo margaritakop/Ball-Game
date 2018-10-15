@@ -2,7 +2,7 @@
 // other lines are commands that the computer runs
 
 var r = 255
-var g = 80
+var g = 0
 var b = 0
 
 function setup() {

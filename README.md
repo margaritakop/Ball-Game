@@ -102,7 +102,7 @@ Open the workshop folder in your editor. In VSCode, choose File > Open and
 select the folder - _not any of the files inside it_. You should see all the
 workshop files in the left-hand file pane.
 
-Open this file - README.md - in your editor. Make notes in here about everything
+Open this file - README.md - in your editor. 
 you do. If you don't know the answer to a question, it's your job to experiment
 with the code to see what you can find out.
 

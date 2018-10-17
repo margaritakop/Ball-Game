@@ -1,9 +1,11 @@
 var x = 0
+var y = 200
 var speed = 2
 var xedge = 400
+var yedge = 400
 
 function setup() {
-  createCanvas(xedge, 400)
+  createCanvas(xedge, yedge)
 }
 
 function draw() {
@@ -17,5 +19,5 @@ function draw() {
     speed = speed * -1
   }
 
-  ellipse(x, 30, 10, 10)
+  ellipse(x, y, 10, 10)
 }

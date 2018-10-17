@@ -14,19 +14,25 @@ function draw() {
 
   x = x + xspeed
 
-  if (x < 0) {
-    xspeed = xspeed * -1
-  } else if (x > xedge) {
+  if (ballShouldBounce(x, xedge)) {
     xspeed = xspeed * -1
   }
 
   y = y + yspeed
 
-  if (y < 0) {
-    yspeed = yspeed * -1
-  } else if (y > yedge) {
+  if (ballShouldBounce(y, yedge)) {
     yspeed = yspeed * -1
   }
 
   ellipse(x, y, 10, 10)
+}
+
+function ballShouldBounce (position, edge){
+  if (position < 0) {
+    return true
+  } else if (position > edge) {
+    return true
+  } else {
+    return false
+  }
 }

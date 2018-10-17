@@ -16,14 +16,17 @@ function draw() {
   background(0)
   x = moveBall(x, y)[0]
   y = moveBall(x, y)[1]
+  ellipse(x, y, 10, 10)
+  ellipse(xgoal, ygoal, 20, 20)
+
   if (Math.abs(x-xgoal) < 10 && Math.abs(y-ygoal) < 10){
     xspeed = 0
     yspeed = 0
     goalspeed = 0
   }
-  ellipse(x, y, 10, 10)
-  ellipse(xgoal, ygoal, 20, 20)
 }
+
+document.onkeydown = checkKey;
 
 function ballShouldBounce (position, edge){
   if (position < 0) {
@@ -52,8 +55,6 @@ function moveBall(x, y){
   return [x, y]
 }
 
-document.onkeydown = checkKey;
-
 function checkKey(e) {
 
     e = e || window.event;
@@ -74,5 +75,4 @@ function checkKey(e) {
        // right arrow
        xgoal = xgoal + goalspeed
     }
-
 }

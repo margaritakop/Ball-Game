@@ -1,8 +1,9 @@
 var x = 0
 var speed = 2
+var xedge = 400
 
 function setup() {
-  createCanvas(400, 400)
+  createCanvas(xedge, 400)
 }
 
 function draw() {
@@ -12,7 +13,7 @@ function draw() {
 
   if (x < 0) {
     speed = speed * -1
-  } else if (x > 300) {
+  } else if (x > xedge) {
     speed = speed * -1
   }
 

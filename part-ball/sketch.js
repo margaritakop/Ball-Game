@@ -40,11 +40,13 @@ function moveBall(x, y){
   x = x + xspeed
   if (ballShouldBounce(x, xedge)) {
     xspeed = xspeed * -1
+    yspeed = yspeed * Math.random() * 2
   }
 
   y = y + yspeed
   if (ballShouldBounce(y, yedge)) {
     yspeed = yspeed * -1
+    xspeed = xspeed * Math.random() * 2
   }
 
   return [x, y]

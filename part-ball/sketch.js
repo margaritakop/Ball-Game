@@ -11,19 +11,8 @@ function setup() {
 
 function draw() {
   background(0)
-
-  x = x + xspeed
-
-  if (ballShouldBounce(x, xedge)) {
-    xspeed = xspeed * -1
-  }
-
-  y = y + yspeed
-
-  if (ballShouldBounce(y, yedge)) {
-    yspeed = yspeed * -1
-  }
-
+  x = moveBall(x, y)[0]
+  y = moveBall(x, y)[1]
   ellipse(x, y, 10, 10)
 }
 
@@ -35,4 +24,19 @@ function ballShouldBounce (position, edge){
   } else {
     return false
   }
+}
+
+function moveBall(x, y){
+
+  x = x + xspeed
+  if (ballShouldBounce(x, xedge)) {
+    xspeed = xspeed * -1
+  }
+
+  y = y + yspeed
+  if (ballShouldBounce(y, yedge)) {
+    yspeed = yspeed * -1
+  }
+
+  return [x, y]
 }

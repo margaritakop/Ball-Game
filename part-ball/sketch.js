@@ -6,6 +6,7 @@ var xedge = 400
 var yedge = 400
 var xgoal = 100
 var ygoal = 100
+var goalspeed = 2
 
 function setup() {
   createCanvas(xedge, yedge);
@@ -18,6 +19,7 @@ function draw() {
   if (Math.abs(x-xgoal) < 10 && Math.abs(y-ygoal) < 10){
     xspeed = 0
     yspeed = 0
+    goalspeed = 0
   }
   ellipse(x, y, 10, 10)
   ellipse(xgoal, ygoal, 20, 20)
@@ -55,15 +57,20 @@ function checkKey(e) {
     e = e || window.event;
 
     if (e.keyCode == '38') {
+        // up arrow
+      ygoal = ygoal - goalspeed
     }
     else if (e.keyCode == '40') {
         // down arrow
+      ygoal = ygoal + goalspeed
     }
     else if (e.keyCode == '37') {
        // left arrow
+       xgoal = xgoal - goalspeed
     }
     else if (e.keyCode == '39') {
        // right arrow
+       xgoal = xgoal + goalspeed
     }
 
 }

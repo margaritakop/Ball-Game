@@ -13,6 +13,7 @@ function setup() {
 }
 
 function draw() {
+  //position and draw both the small and big balls
   background(0)
   x = moveBall(x, y)[0]
   y = moveBall(x, y)[1]
@@ -27,6 +28,7 @@ function draw() {
 }
 
 document.onkeydown = checkKey;
+//detect if a key is down
 
 function ballShouldBounce (position, edge){
   if (position < 0) {
@@ -56,6 +58,7 @@ function moveBall(x, y){
 }
 
 function checkKey(e) {
+  //change the coordinates of the big ball according to pressed arrow keys
 
     e = e || window.event;
 

@@ -1,11 +1,11 @@
-var x = 0
-var y = 200
+var x = 300
+var y = 300
 var xspeed = 2
 var yspeed = 2
 var xedge = 400
 var yedge = 400
 var xgoal = 100
-var ygoal = 100
+var ygoal = 300
 var goalspeed = 2
 
 function setup() {

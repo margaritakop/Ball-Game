@@ -1,29 +1,33 @@
-var x = 300
-var y = 300
-var xspeed = 2
-var yspeed = 2
-var xedge = 400
-var yedge = 400
-var xgoal = 100
-var ygoal = 300
-var goalspeed = 2
+var xSmallBall = 300
+var ySmallBall = 300
+var xSmallBallSpeed = 2
+var ySmallBallSpeed = 2
+
+var xBigBall = 100
+var yBigBall = 300
+var BigBallSpeed = 2
+
+var xEdge = 400
+var yEdge = 400
+
 
 function setup() {
-  createCanvas(xedge, yedge);
+  createCanvas(xEdge, yEdge);
 }
 
 function draw() {
   //position and draw both the small and big balls
   background(0)
-  x = moveBall(x, y)[0]
-  y = moveBall(x, y)[1]
-  ellipse(x, y, 10, 10)
-  ellipse(xgoal, ygoal, 20, 20)
+  xSmallBall = moveBall(xSmallBall, ySmallBall)[0]
+  ySmallBall = moveBall(xSmallBall, ySmallBall)[1]
+  ellipse(xSmallBall, ySmallBall, 10, 10)
+  ellipse(xBigBall, yBigBall
+  , 20, 20)
 
-  if (Math.abs(x-xgoal) < 10 && Math.abs(y-ygoal) < 10){
-    xspeed = 0
-    yspeed = 0
-    goalspeed = 0
+  if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall
+  ) < 10){
+  xSmallBallSpeed
+    ySmallBallSpeed = 0BigBallS= 0
   }
 }
 
@@ -40,21 +44,20 @@ function ballShouldBounce (position, edge){
   }
 }
 
-function moveBall(x, y){
+function moveBall(xSmallBall, ySmallBall){
 
-  x = x + xspeed
-  if (ballShouldBounce(x, xedge)) {
-    xspeed = xspeed * -1
-    yspeed = yspeed * Math.random() * 2
+  xSmallBall = xSmallBall +xSpeef (ballShouldBounce(xSmallBall, xEdge)) {
+  xSpeedpeed1
+    ySmallBallSpeed = ySmallBallSpeed * Math.random() * 2
   }
 
-  y = y + yspeed
-  if (ballShouldBounce(y, yedge)) {
-    yspeed = yspeed * -1
-    xspeed = xspeed * Math.random() * 2
+  ySmallBall = ySmallBall + ySmallBallSpeed
+  if (ballShouldBounce(ySmallBall, yEdge)) {
+    ySmallBallSpeed = ySmallBallSpeed * -1
+  xSpeedpeedath.random() * 2
   }
 
-  return [x, y]
+  return [xSmallBall, ySmallBall]
 }
 
 function checkKey(e) {
@@ -64,18 +67,18 @@ function checkKey(e) {
 
     if (e.keyCode == '38') {
         // up arrow
-      ygoal = ygoal - goalspeed
-    }
+      yBigBall
+     = yBigBall
+    BigBallS    }
     else if (e.keyCode == '40') {
         // down arrow
-      ygoal = ygoal + goalspeed
-    }
+      yBigBall
+     = yBigBall
+    BigBallS    }
     else if (e.keyCode == '37') {
        // left arrow
-       xgoal = xgoal - goalspeed
-    }
+       xBigBall = xBigBallBigBallS    }
     else if (e.keyCode == '39') {
        // right arrow
-       xgoal = xgoal + goalspeed
-    }
+       xBigBall = xBigBallBigBallS    }
 }

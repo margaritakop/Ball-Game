@@ -27,7 +27,7 @@ function draw() {
   fill(0,206,209)  
   ellipse(xBigBall, yBigBall, xBigSize, yBigSize)
 
-  if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall) < 10){
+  if (Math.abs(xSmallBall-xBigBall) < xBigSize/2 && Math.abs(ySmallBall-yBigBall) < xBigSize/2){
     xSmallBall = 400 * Math.random()
     ySmallBall = 400 * Math.random()
     xSmallBallSpeed = Math.round(Math.random()) * 2 - 1

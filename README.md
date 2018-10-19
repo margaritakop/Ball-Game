@@ -1,5 +1,7 @@
 # Ball Game based on intro to p5 tutorial
 
+Play the game here: https://margaritakop.github.io/di-workshop-01-intro-to-p5/ 
+
 # Part 5
 
 Create a new sketch using this code:

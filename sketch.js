@@ -23,9 +23,10 @@ function draw() {
   ellipse(xBigBall, yBigBall, 20, 20)
 
   if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall) < 10){
-    xSmallBallSpeed = 0
-    ySmallBallSpeed = 0
-    BigBallSpeed = 0
+    xSmallBall = 400 * Math.random()
+    ySmallBall = 400 * Math.random()
+    xSmallBallSpeed = Math.round(Math.random()) * 2 - 1
+    ySmallBallSpeed = Math.round(Math.random()) * 2 - 1
   }
 }
 

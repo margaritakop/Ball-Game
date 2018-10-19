@@ -4,7 +4,7 @@ var yedge = 400
 var xSmallBall = 300
 var ySmallBall = 300
 var xSmallBallSpeed = 2
-var ySnallBallSpeed = 2
+var ySmallBallSpeed = 2
 
 var xBigBall = 100
 var yBigBall = 300
@@ -24,7 +24,7 @@ function draw() {
 
   if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall) < 10){
     xSmallBallSpeed = 0
-    ySnallBallSpeed = 0
+    ySmallBallSpeed = 0
     BigBallSpeed = 0
   }
 }
@@ -36,12 +36,12 @@ function moveSmallBall(xSmallBall, ySmallBall){
   xSmallBall = xSmallBall + xSmallBallSpeed
   if (ballShouldBounce(xSmallBall, xedge)) {
     xSmallBallSpeed = xSmallBallSpeed * -1
-    ySnallBallSpeed = ySnallBallSpeed * Math.random() * 2
+    ySmallBallSpeed = ySmallBallSpeed * Math.random() * 2
   }
 
-  ySmallBall = ySmallBall + ySnallBallSpeed
+  ySmallBall = ySmallBall + ySmallBallSpeed
   if (ballShouldBounce(ySmallBall, yedge)) {
-    ySnallBallSpeed = ySnallBallSpeed * -1
+    ySmallBallSpeed = ySmallBallSpeed * -1
     xSmallBallSpeed = xSmallBallSpeed * Math.random() * 2
   }
 

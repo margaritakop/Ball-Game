@@ -10,6 +10,9 @@ var xBigBall = 100
 var yBigBall = 300
 var BigBallSpeed = 2
 
+var xBigSize = 20
+var yBigSize = 20
+
 function setup() {
   createCanvas(xedge, yedge);
 }
@@ -20,16 +23,17 @@ function draw() {
   xSmallBall = moveSmallBall(xSmallBall, ySmallBall)[0]
   ySmallBall = moveSmallBall(xSmallBall, ySmallBall)[1]
   ellipse(xSmallBall, ySmallBall, 10, 10)
-  ellipse(xBigBall, yBigBall, 20, 20)
+  ellipse(xBigBall, yBigBall, xBigSize, yBigSize)
 
   if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall) < 10){
     xSmallBall = 400 * Math.random()
     ySmallBall = 400 * Math.random()
     xSmallBallSpeed = Math.round(Math.random()) * 2 - 1
     ySmallBallSpeed = Math.round(Math.random()) * 2 - 1
+    xBigSize = xBigSize + 5
+    yBigSize = yBigSize + 5
   }
 }
-
 
 // movements of small ball
 function moveSmallBall(xSmallBall, ySmallBall){

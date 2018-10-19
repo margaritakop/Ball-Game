@@ -17,8 +17,8 @@ function setup() {
 function draw() {
   //position and draw both the small and big balls
   background(0)
-  xSmallBall = moveBall(xSmallBall, ySmallBall)[0]
-  ySmallBall = moveBall(xSmallBall, ySmallBall)[1]
+  xSmallBall = moveSmallBall(xSmallBall, ySmallBall)[0]
+  ySmallBall = moveSmallBall(xSmallBall, ySmallBall)[1]
   ellipse(xSmallBall, ySmallBall, 10, 10)
   ellipse(xBigBall, yBigBall, 20, 20)
 
@@ -29,20 +29,9 @@ function draw() {
   }
 }
 
-document.onkeydown = checkKey;
-//detect if a key is down
 
-function ballShouldBounce (position, edge){
-  if (position < 0) {
-    return true
-  } else if (position > edge) {
-    return true
-  } else {
-    return false
-  }
-}
-
-function moveBall(xSmallBall, ySmallBall){
+// movements of small ball
+function moveSmallBall(xSmallBall, ySmallBall){
 
   xSmallBall = xSmallBall + xSmallBallSpeed
   if (ballShouldBounce(xSmallBall, xedge)) {
@@ -59,10 +48,25 @@ function moveBall(xSmallBall, ySmallBall){
   return [xSmallBall, ySmallBall]
 }
 
-function checkKey(e) {
+function ballShouldBounce (position, edge){
+  if (position < 0) {
+    return true
+  } else if (position > edge) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+// movements of the big ball
+document.onkeydown = moveBigBall;
+//detect if a key is down
+
+function moveBigBall (){
   //change the coordinates of the big ball according to pressed arrow keys
 
-    e = e || window.event;
+    e = window.event;
 
     if (e.keyCode == '38') {
         // up arrow

@@ -6,12 +6,21 @@ var ySmallBall = 300
 var xSmallBallSpeed = 2
 var ySmallBallSpeed = 2
 
+//first big ball
 var xBigBall = 100
 var yBigBall = 300
 var BigBallSpeed = 2
 
 var xBigSize = 20
 var yBigSize = 20
+
+//second green ball
+var xGreenBall = 300
+var yGreenBall = 100
+var GreenBallSpeed = 2
+
+var xGreenSize = 20
+var yGreenSize = 20
 
 function setup() {
   createCanvas(xedge, yedge);
@@ -26,6 +35,8 @@ function draw() {
   ellipse(xSmallBall, ySmallBall, 10, 10)
   fill(0,206,209)  
   ellipse(xBigBall, yBigBall, xBigSize, yBigSize)
+  fill(46,139,87)  
+  ellipse(xGreenBall, yGreenBall, xGreenSize, yGreenSize)
 
   if (Math.abs(xSmallBall-xBigBall) < xBigSize/2 && Math.abs(ySmallBall-yBigBall) < xBigSize/2){
     xSmallBall = 400 * Math.random()

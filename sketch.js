@@ -19,7 +19,9 @@ function draw() {
   background(0)
   xSmallBall = moveSmallBall(xSmallBall, ySmallBall)[0]
   ySmallBall = moveSmallBall(xSmallBall, ySmallBall)[1]
+  fill(255,160,122)
   ellipse(xSmallBall, ySmallBall, 10, 10)
+  fill(0,206,209)
   ellipse(xBigBall, yBigBall, 20, 20)
 
   if (Math.abs(xSmallBall-xBigBall) < 10 && Math.abs(ySmallBall-yBigBall) < 10){

@@ -70,24 +70,24 @@ function ballShouldBounce (position, edge){
 document.onkeydown = moveBigBall;
 //detect if a key is down
 
-function moveBigBall (){
+function moveBigBall (event){
   //change the coordinates of the big ball according to pressed arrow keys
+    console.log(event)
+    keyCode = event.which || event.keyCode;
 
-    e = window.event;
-
-    if (e.keyCode == '38') {
+    if (keyCode == '38') {
         // up arrow
       yBigBall = yBigBall - BigBallSpeed
     }
-    else if (e.keyCode == '40') {
+    else if (keyCode == '40') {
         // down arrow
       yBigBall = yBigBall + BigBallSpeed
     }
-    else if (e.keyCode == '37') {
+    else if (keyCode == '37') {
        // left arrow
        xBigBall = xBigBall - BigBallSpeed
     }
-    else if (e.keyCode == '39') {
+    else if (keyCode == '39') {
        // right arrow
        xBigBall = xBigBall + BigBallSpeed
     }

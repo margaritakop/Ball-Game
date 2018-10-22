@@ -1,6 +1,6 @@
 # Ball Game based on intro to p5 tutorial
 
-Play the game here: https://margaritakop.github.io/di-workshop-01-intro-to-p5/ 
+Play the game here: https://margaritakop.github.io/Ball-Game/
 
 # Part 5
 
